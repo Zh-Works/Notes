@@ -1,5 +1,6 @@
 pg_dump tlp_stg | gzip > /backup/postgres_tlp/2021-04-27dump/tlp_stg.zip
 pg_dump metabase | gzip > /backup/postgres_tlp/2021-04-27dump/metabase.zip
+pg_dump metabase | gzip > /backup/postgres_tlp/2021-04-29dump/metabase.zip
 
 pg_dumpall -s | gzip > /backup/postgres_tlp/2021-04-27dump/schema.zip
 
