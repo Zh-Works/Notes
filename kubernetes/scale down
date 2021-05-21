@@ -1,0 +1,1 @@
+kubectl --context tlp-stg --namespace tlp-stg scale deploy/be-metabase --replicas=0
