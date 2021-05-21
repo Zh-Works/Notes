@@ -1,0 +1,11 @@
+# Delete local branch
+git branch -d origin/feature/experiment
+
+# Force delete local branch
+git branch -D origin/feature/experiment
+
+# Delete remote branch
+git push origin --delete feature/experiment
+
+# Publish new local branch
+git push --set-upstream origin main
