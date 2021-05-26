@@ -21,6 +21,9 @@ GRANT SELECT ON ALL TABLES IN SCHEMA tender to tlp_ro;
 GRANT USAGE ON SCHEMA external_dicts to tlp_ro;
 GRANT SELECT ON ALL TABLES IN SCHEMA external_dicts to tlp_ro;
 
+GRANT USAGE ON SCHEMA external_dicts to "agc_ro";
+GRANT SELECT ON ALL TABLES IN SCHEMA external_dicts to "agc_ro";
+
 
 GRANT tlp_rw TO tlp;
 CREATE ROLE tlp_rw;

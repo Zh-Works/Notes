@@ -1,0 +1,4 @@
+\l - databases
+
+\c <db_name>
+\du - список пользователей
