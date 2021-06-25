@@ -1,0 +1,46 @@
+Конфиг общий:
+/etc/barman.conf
+
+Конфиг посерверный
+/etc/barman.d/hostname.conf
+
+Статус хоста
+barman check hostname
+
+Список серверов
+barman list-server
+
+Список бэкапов серверов
+barman list-backup hostname
+
+Список файлов бэкапов серверов
+barman list-files hostname backupname
+
+Перенес все base, wals, streaming
+Сделал barman switch-xlog --force --archive hostname - появился новый streaming
+Сделал rebuild-xlogdb появилась статистика по wal ам
+
+mv nl-tlp-dbstg00/streaming/000000010000000F000000A5.partial dbstg/streaming/
+
+1. Меняем путь в ансибле
+2. barman switch-xlog --force --archive hostname
+3. 
+mv nl-tlp-dbstg00/streaming/000000010000000F000000A5.partial dbstg/streaming/
+
+
+
+mkdir base errors incoming streaming wals
+
+barman check nl-tlp-dbstg00
+barman list-backup nl-tlp-dbstg00
+barman switch-xlog --force --archive nl-tlp-dbstg00
+vi /etc/barman.d/nl-tlp-dbstg00.conf
+mv .partial streaming/* wals/*
+barman receive-wal --stop nl-tlp-dbstg00
+mv base/*
+barman rebuild-xlogdb nl-tlp-dbstg00
+barman check nl-tlp-dbstg00
+barman list-backup nl-tlp-dbstg00
+
+mv /backup/barman/dbstg/streaming/000000010000000F000000A9.partial /backup/barman/nl-tlp-dbstg00/streaming/
+ 

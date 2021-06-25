@@ -1,0 +1,12 @@
+
+mkdir base errors incoming streaming wals
+barman check nl-tlp-dbprd00
+barman list-backup nl-tlp-dbprd00
+barman switch-xlog --force --archive nl-tlp-dbprd00
+vi /etc/barman.d/nl-tlp-dbprd00.conf
+mv .partial streaming/* wals/*
+barman receive-wal --stop nl-tlp-dbprd00
+mv base/*
+barman rebuild-xlogdb nl-tlp-dbprd00
+barman check nl-tlp-dbprd00
+barman list-backup nl-tlp-dbprd00
