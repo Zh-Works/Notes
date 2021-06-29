@@ -1,0 +1,9 @@
+curl nl-elastic01.local.profee.com:9200/_cat/nodes
+curl "nl-elastic01.local.profee.com:9200/_cluster/health?pretty"
+
+https://conf.local.profee.com/display/ISO/NL+VLAN149+-+PROFEE-SERVICES 
+
+nl-elast-arch00.local.profee.com
+
+systemctl restart elasticsearch.service
+journalctl -u elasticsearch.service
