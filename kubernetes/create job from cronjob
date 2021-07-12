@@ -1,0 +1,1 @@
+kubectl --context tlp-prod -n tlp-prod create job --from=cronjob/op-mtbs-report op-mtbs-report-manual-01
